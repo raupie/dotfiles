@@ -1,0 +1,6 @@
+[user]
+  name = Felippe Nardi
+  email = felippe@nardi.me
+[core]
+  excludesfile = ~/.gitignore_global
+  editor = vim
