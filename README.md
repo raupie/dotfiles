@@ -7,6 +7,4 @@ Clone dotfiles into a directory
 
     $ git clone https://github.com/raupie/dotfiles ~/.dotfiles
 
-Then `cd .dotfiles` and run the install bash script
-
-    $ ./install.bash
+Then run `bash install.sh`
