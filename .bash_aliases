@@ -1,5 +1,5 @@
 alias c='clear'
-alias l='ls -al'
+alias l='ls -alh'
 alias ldir='ls -ld */'
 alias lm='ls -al|more'
 
