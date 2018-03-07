@@ -23,3 +23,6 @@ then
 fi
 
 export HISTCONTROL=ignoredups~
+
+mount --bind /mnt/d /d
+export DOCKER_HOST=tcp://localhost:2375
