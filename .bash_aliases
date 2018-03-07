@@ -1,3 +1,4 @@
+mount --bind /mnt/d /d
 alias c='clear'
 alias l='ls -alh'
 alias ldir='ls -ld */'
