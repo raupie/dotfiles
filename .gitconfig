@@ -1,6 +1,6 @@
 [user]
-  name = Felippe Nardi
-  email = felippe@nardi.me
+  name = Travis Raup
+  email = travis.raup@gmail.com
 [core]
   excludesfile = ~/.gitignore_global
   editor = vim
