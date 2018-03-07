@@ -1,3 +1,5 @@
+export DOCKER_HOST=tcp://localhost:2375
+
 #Docker Custom: Prune Containers
 alias dpc='docker container prune -f'
 
