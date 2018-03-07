@@ -23,3 +23,5 @@ then
 fi
 
 export HISTCONTROL=ignoredups~
+
+#mount --bind /mnt/d /d
