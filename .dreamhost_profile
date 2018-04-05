@@ -1,0 +1,3 @@
+export PATH=~/.php/composer:$PATH
+export PATH=~/.php/wp:$PATH
+export PATH=~/.php/dep:$PATH
