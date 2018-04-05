@@ -1,3 +1,4 @@
+export PATH=/usr/local/php70/bin:$PATH
 export PATH=~/.php/composer:$PATH
 export PATH=~/.php/wp:$PATH
 export PATH=~/.php/dep:$PATH
