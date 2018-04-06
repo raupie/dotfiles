@@ -4,14 +4,70 @@
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 ############################
 
-########## Variables
-
+# Variables
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
-# list of files/folders to symlink in homedir
-files=".bash_aliases .bash_profile .bashrc .docker_aliases .dreamhost_profile .ez_profile .gitconfig .gitignore_global .tmux.conf .vimrc"
+# default list of files
+files=".bashrc .bash_profile .bash_aliases .vimrc"
+# optional files to add
+dreamhost="y"
+docker="y"
+ez="y"
+git="y"
+tmux="y"
 
-##########
+option=""
+while [[ ! $option =~ ^[0-1]+$ ]]; do
+    echo "Installation Options:"
+    echo "[0] Full"
+    echo "[1] Custom"
+    read option
+done
+
+# dreamhost configuration
+if [[ $option -eq 1 ]];
+then
+    read -p "Install Dreamhost Aliases: {y/n}? " dreamhost
+fi
+case "$dreamhost" in 
+    y|Y ) files=$files" .dreamhost_profile";;
+esac
+
+# docker configuration
+if [[ $option -eq 1 ]];
+then
+    read -p "Install Docker Aliases: {y/n}? " docker
+fi
+case "$docker" in
+    y|Y ) files=$files" .docker_aliases";;
+esac
+
+# ez configuration
+if [[ $option -eq 1 ]];
+then
+    read -p "Install eZ Aliases: {y/n}? " ez
+fi
+case "$ez" in
+    y|Y ) files=$files" .ez_profile";;
+esac
+
+# git configuration
+if [[ $option -eq 1 ]];
+then
+    read -p "Install Git Aliases: {y/n}? " git
+fi
+case "$git" in
+    y|Y ) files=$files" .gitconfig .gitignore_global";;
+esac
+
+# tmux configuration
+if [[ $option -eq 1 ]];
+then
+    read -p "Install Tmux Aliases: {y/n}? " tmux
+fi
+case "$tmux" in
+    y|Y ) files=$files" .tmux.conf";;
+esac
 
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
