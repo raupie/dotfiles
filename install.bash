@@ -48,7 +48,8 @@ then
     read -p "Docker WSL Mount Letter (Optional): " docker_mount_path
 fi
 
-if [[ ! -z $docker_mount_path ]]
+if [[ ! -z $docker_mount_path ]];
+then
     if [[ ! -d "/mnt/$docker_mount_path" ]];
     then
         mkdir -p /mnt/$docker_mount_path
