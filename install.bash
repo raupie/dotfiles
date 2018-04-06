@@ -47,14 +47,17 @@ if [[ $option -eq 1 ]];
 then
     read -p "Docker WSL Mount Letter (Optional): " docker_mount_path
 fi
-if [[ ! -d "/mnt/$docker_mount_path" ]];
-then
-    mkdir -p /mnt/$docker_mount_path
-    mount -t drvfs ${docker_mount_path^^}: /mnt/$docker_mount_path
-    mkdir -p /$docker_mount_path
-    mount --bind /mnt/$docker_mount_path /$docker_mount_path
-else
-    echo "Error: Path could not be found or already exists: /mnt/$docker_mount_path";
+
+if [[ ! -z $docker_mount_path ]]
+    if [[ ! -d "/mnt/$docker_mount_path" ]];
+    then
+        mkdir -p /mnt/$docker_mount_path
+        mount -t drvfs ${docker_mount_path^^}: /mnt/$docker_mount_path
+        mkdir -p /$docker_mount_path
+        mount --bind /mnt/$docker_mount_path /$docker_mount_path
+    else
+        echo "Error: Path could not be found or already exists: /mnt/$docker_mount_path";
+    fi
 fi
 
 # ez configuration
