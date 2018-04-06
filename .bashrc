@@ -33,7 +33,3 @@ then
 fi
 
 export HISTCONTROL=ignoredups~
-
-## Change this for WSL Docker Environments
-## TODO: make this into a prompt to add
-#mount --bind /mnt/d /d

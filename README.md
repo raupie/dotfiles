@@ -7,4 +7,4 @@ Clone dotfiles into your home directory
 
     $ git clone https://github.com/raupie/dotfiles ~/.dotfiles
 
-Then run `bash ~/.dotfiles/install.sh`
+Then run `bash ~/.dotfiles/install.bash`

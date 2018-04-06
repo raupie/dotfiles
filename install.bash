@@ -42,6 +42,21 @@ case "$docker" in
     y|Y ) files=$files" .docker_aliases";;
 esac
 
+# wsl docker configuration
+if [[ $option -eq 1 ]];
+then
+    read -p "Docker WSL Mount Letter (Optional): " docker_mount_path
+fi
+if [ ! $docker_mount_path ] && [ -d "/mnt/$docker_mount_path" ];
+then
+    mkdir /$docker_mount_path
+    mount --bind /mnt/$docker_mount_path /$docker_mount_path
+    echo "mount --bind /mnt/$docker_mount_path /$docker_mount_path" >> $dir/.bashrc
+else
+    echo "Error: Path could not be found: /mnt/$docker_mount_path";
+fi
+
+
 # ez configuration
 if [[ $option -eq 1 ]];
 then
