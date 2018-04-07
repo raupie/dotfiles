@@ -12,6 +12,7 @@ files=".bashrc .bash_profile .bash_aliases .vimrc"
 # optional files to add
 dreamhost="y"
 docker="y"
+docker_wsl="y"
 ez="y"
 git="y"
 tmux="y"
@@ -42,11 +43,15 @@ case "$docker" in
     y|Y ) files=$files" .docker_aliases";;
 esac
 
-# wsl docker configuration
+# docker wsl configuration
 if [[ $option -eq 1 ]];
 then
-    read -p "Docker WSL Mount Letter (Optional): " docker_mount_path
+    read -p "Install Docker WSL Configuration: {y/n}? " docker_wsl
+	echo "export DOCKER_HOST=tcp://localhost:2375" >> $dir/.docker_aliases
 fi
+case "$docker_wsl" in 
+    y|Y ) read -p "Docker WSL Mount Letter (Optional): " docker_mount_path;;
+esac
 
 if [[ ! -z $docker_mount_path ]];
 then
