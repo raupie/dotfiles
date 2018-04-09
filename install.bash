@@ -47,7 +47,7 @@ esac
 if [[ $option -eq 1 ]];
 then
     read -p "Install Docker WSL Configuration: {y/n}? " docker_wsl
-	echo "export DOCKER_HOST=tcp://localhost:2375" >> $dir/.docker_aliases
+	echo -e "export DOCKER_HOST=tcp://localhost:2375" >> $dir/.docker_aliases
 fi
 case "$docker_wsl" in 
     y|Y ) read -p "Docker WSL Mount Letter (Optional): " docker_mount_path;;
@@ -61,7 +61,7 @@ then
         mount -t drvfs ${docker_mount_path^^}: /mnt/$docker_mount_path
         mkdir -p /$docker_mount_path
         mount --bind /mnt/$docker_mount_path /$docker_mount_path
-		echo "mount --bind /mnt/$docker_mount_path /$docker_mount_path" >> $dir/.bashrc
+		echo -e "mount --bind /mnt/$docker_mount_path /$docker_mount_path" >> $dir/.bashrc
     else
         echo "Error: Path could not be found or already exists: /mnt/$docker_mount_path";
     fi
