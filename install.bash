@@ -61,6 +61,7 @@ then
         mount -t drvfs ${docker_mount_path^^}: /mnt/$docker_mount_path
         mkdir -p /$docker_mount_path
         mount --bind /mnt/$docker_mount_path /$docker_mount_path
+		echo "mount --bind /mnt/$docker_mount_path /$docker_mount_path"
     else
         echo "Error: Path could not be found or already exists: /mnt/$docker_mount_path";
     fi
