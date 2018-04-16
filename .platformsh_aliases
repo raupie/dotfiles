@@ -1,2 +1,2 @@
 # Platform.sh Aliases
-alias platformtest='echo custom platform alias'
+alias psh:dump='platform db:dump -f ezplatform.sql.gz -d data -z -t'
