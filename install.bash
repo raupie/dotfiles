@@ -10,12 +10,12 @@ olddir=~/.dotfiles_old             # old dotfiles backup directory
 # default list of files
 files=".bashrc .bash_profile .bash_aliases .vimrc"
 # optional files to add
-dreamhost="y"
 docker="y"
 docker_wsl="y"
 ez="y"
 git="y"
 tmux="y"
+dreamhost="y"
 
 option=""
 while [[ ! $option =~ ^[0-1]+$ ]]; do
@@ -24,15 +24,6 @@ while [[ ! $option =~ ^[0-1]+$ ]]; do
     echo "[1] Custom"
     read option
 done
-
-# dreamhost configuration
-if [[ $option -eq 1 ]];
-then
-    read -p "Install Dreamhost Aliases: {y/n}? " dreamhost
-fi
-case "$dreamhost" in 
-    y|Y ) files=$files" .dreamhost_profile";;
-esac
 
 # docker configuration
 if [[ $option -eq 1 ]];
@@ -92,6 +83,15 @@ then
 fi
 case "$tmux" in
     y|Y ) files=$files" .tmux.conf";;
+esac
+
+# dreamhost configuration
+if [[ $option -eq 1 ]];
+then
+    read -p "Install Dreamhost Aliases: {y/n}? " dreamhost
+fi
+case "$dreamhost" in 
+    y|Y ) files=$files" .dreamhost_profile";;
 esac
 
 # create dotfiles_old in homedir
