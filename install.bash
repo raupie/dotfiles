@@ -39,10 +39,11 @@ esac
 if [[ $option -eq 1 ]];
 then
     read -p "Install Docker WSL Configuration: {y/n}? " docker_wsl
-	echo -e "export DOCKER_HOST=tcp://localhost:2375" >> $dir/.docker_aliases
 fi
 case "$docker_wsl" in 
-    y|Y ) read -p "Docker WSL Mount Letter (Optional): " docker_mount_path;;
+    y|Y ) 
+    echo -e "export DOCKER_HOST=tcp://localhost:2375" >> $dir/.docker_aliases    
+    read -p "Docker WSL Mount Letter (Optional): " docker_mount_path;;
 esac
 
 if [[ ! -z $docker_mount_path ]];
