@@ -13,6 +13,7 @@ files=".bashrc .bash_profile .bash_aliases .vimrc"
 docker="y"
 docker_wsl="y"
 ez="y"
+platformsh="y"
 git="y"
 tmux="y"
 dreamhost="y"
@@ -65,6 +66,15 @@ then
 fi
 case "$ez" in
     y|Y ) files=$files" .ez_profile";;
+esac
+
+# platform.sh configuration
+if [[ $option -eq 1 ]];
+then
+    read -p "Install Platform.sh Aliases: {y/n}? " platformsh
+fi
+case "$platformsh" in
+    y|Y ) files=$files" .platformsh_aliases";;
 esac
 
 # git configuration

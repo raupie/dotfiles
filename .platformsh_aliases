@@ -1,0 +1,2 @@
+# Platform.sh Aliases
+alias platformtest='echo custom platform alias'
