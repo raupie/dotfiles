@@ -67,7 +67,7 @@ then
     read -p "Install eZ Aliases: {y/n}? " ez
 fi
 case "$ez" in
-    y|Y ) files=$files" .ez_profile";;
+    y|Y ) files=$files" .ez_aliases";;
 esac
 
 # platform.sh configuration
