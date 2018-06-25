@@ -1,1 +1,17 @@
 alias ez='~/ez'
+alias ezclear:cache='clearCache'
+alias ezclear:redis='clearRedis'
+alias ezclear:all='clearAll'
+ 
+function clearCache(){
+  ~/ez sfrun cache:clear --env="${1:-dev}"
+}
+ 
+function clearRedis(){
+  ~/ez sfrun cache:pool:clear cache.redis
+}
+ 
+function clearAll(){
+  ~/ez sfrun cache:clear --env="${1:-dev}"
+  ~/ez sfrun cache:pool:clear cache.redis
+}
