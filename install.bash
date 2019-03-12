@@ -17,6 +17,7 @@ platformsh="y"
 git="y"
 tmux="y"
 dreamhost="y"
+zsh="y"
 
 option=""
 while [[ ! $option =~ ^[0-1]+$ ]]; do
@@ -104,6 +105,15 @@ fi
 case "$dreamhost" in 
     y|Y ) files=$files" .dreamhost_profile";;
 esac
+
+# zsh configuration
+if [[ $option -eq 1 ]];
+then
+    read -p "Install ZSH Config: {y/n}? " zsh
+fi
+case "$zsh" in
+    y|Y ) files=$files" .zshrc";;
+esac	
 
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
