@@ -29,12 +29,3 @@ fi
 if [ -f ~/.dreamhost_profile ]; then
   . ~/.dreamhost_profile
 fi
-
-LS_COLORS=$LS_COLORS:'di=0;32:' ; export LS_COLORS
-
-if [[ $- == *i* ]]
-then
-    export PS1="\u@\h:\w \\$ \[$(tput sgr0)\]"
-fi
-
-export HISTCONTROL=ignoredups~
