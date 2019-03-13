@@ -8,6 +8,9 @@ alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 
+alias df='df -h'
+alias du='du -h -c'
+
 alias myip='curl http://ipecho.net/plain; echo'
 alias ducks='du -csh * | sort -rn | head'
 
