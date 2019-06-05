@@ -29,3 +29,5 @@ fi
 if [ -f ~/.dreamhost_profile ]; then
   . ~/.dreamhost_profile
 fi
+
+export PATH="$HOME/.composer/vendor/bin:$PATH"
