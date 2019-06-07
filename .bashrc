@@ -31,3 +31,11 @@ if [ -f ~/.dreamhost_profile ]; then
 fi
 
 export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+# BEGIN SNIPPET: Platform.sh CLI configuration
+export PATH="$HOME/"'.platformsh/bin':"$PATH"
+if [ -f "$HOME/"'.platformsh/shell-config.rc' ]; then . "$HOME/"'.platformsh/shell-config.rc'; fi # END SNIPPET
+ 
+# BEGIN SNIPPET: Magento Cloud CLI configuration
+export PATH="$HOME/"'.magento-cloud/bin':"$PATH"
+if [ -f "$HOME/"'.magento-cloud/shell-config.rc' ]; then . "$HOME/"'.magento-cloud/shell-config.rc'; fi # END SNIPPET
