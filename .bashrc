@@ -30,6 +30,8 @@ if [ -f ~/.dreamhost_profile ]; then
   . ~/.dreamhost_profile
 fi
 
+[ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"
+
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # BEGIN SNIPPET: Platform.sh CLI configuration
