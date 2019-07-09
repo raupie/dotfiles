@@ -19,5 +19,13 @@ fi
  
 alias zshconfig="vi ~/.zshrc"
 alias ohmyzsh="vi ~/.oh-my-zsh"
-  
+alias vim="nocorrect vim"
+alias ssh="nocorrect ssh"
+
+# Platform CLI
+alias platform="nocorrect platform"
+alias ssh="nocorrect ssh"
+alias psh="platform ssh"
+alias mc="magento-cloud ssh"
+ 
 source ~/.bashrc
