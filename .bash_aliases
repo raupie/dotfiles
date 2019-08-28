@@ -8,6 +8,10 @@ alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 
+alias cp='cp -rv'
+alias mv='mv -v'
+alias mkdir='mkdir -pv'
+
 alias df='df -h'
 alias du='du -h -c'
 
@@ -23,4 +27,7 @@ alias pscpu='ps auxf | sort -nr -k 3'
 alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
 
 ## Python
-alias activate='source .env/bin/activate'
+alias pym='python3 manage.py'
+alias mkenv='python3 -m venv env'
+alias startenv='source env/bin/activate && which python3'
+alias stopenv='deactivate'
