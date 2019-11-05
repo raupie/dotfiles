@@ -29,3 +29,18 @@ alias psh="platform ssh"
 alias mc="magento-cloud ssh"
  
 source ~/.bashrc
+
+# BEGIN SNIPPET: Platform.sh CLI configuration
+HOME=${HOME:-'/home/raupie'}
+export PATH="$HOME/"'.platformsh/bin':"$PATH"
+if [ -f "$HOME/"'.platformsh/shell-config.rc' ]; then . "$HOME/"'.platformsh/shell-config.rc'; fi # END SNIPPET
+
+# BEGIN SNIPPET: Magento Cloud CLI configuration
+HOME=${HOME:-'/home/raupie'}
+export PATH="$HOME/"'.magento-cloud/bin':"$PATH"
+if [ -f "$HOME/"'.magento-cloud/shell-config.rc' ]; then . "$HOME/"'.magento-cloud/shell-config.rc'; fi # END SNIPPET
+
+# BEGIN SNIPPET: SymfonyCloud (PHP) CLI configuration
+HOME=${HOME:-'/home/raupie'}
+export PATH="$HOME/"'.symfony-cloud-cli/bin':"$PATH"
+if [ -f "$HOME/"'.symfony-cloud-cli/shell-config.rc' ]; then . "$HOME/"'.symfony-cloud-cli/shell-config.rc'; fi # END SNIPPET
