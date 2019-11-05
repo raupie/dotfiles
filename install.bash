@@ -16,6 +16,7 @@ ez="y"
 platformsh="y"
 git="y"
 tmux="y"
+wordpress="y"
 dreamhost="y"
 zsh="y"
 
@@ -41,9 +42,9 @@ if [[ $option -eq 1 ]];
 then
     read -p "Install Docker WSL Configuration: {y/n}? " docker_wsl
 fi
-case "$docker_wsl" in 
-    y|Y ) 
-    echo -e "export DOCKER_HOST=tcp://localhost:2375" >> $dir/.docker_aliases    
+case "$docker_wsl" in
+    y|Y )
+    echo -e "export DOCKER_HOST=tcp://localhost:2375" >> $dir/.docker_aliases
     read -p "Docker WSL Mount Letter (Optional): " docker_mount_path;;
 esac
 
@@ -97,12 +98,21 @@ case "$tmux" in
     y|Y ) files=$files" .tmux.conf";;
 esac
 
+# wordpress configuration
+if [[ $option -eq 1 ]];
+then
+    read -p "Install WordPress Aliases: {y/n}? " wordpress
+fi
+case "$wordpress" in
+    y|Y ) files=$files" .wordpress_aliases";;
+esac
+
 # dreamhost configuration
 if [[ $option -eq 1 ]];
 then
     read -p "Install Dreamhost Aliases: {y/n}? " dreamhost
 fi
-case "$dreamhost" in 
+case "$dreamhost" in
     y|Y ) files=$files" .dreamhost_profile";;
 esac
 
@@ -113,7 +123,7 @@ then
 fi
 case "$zsh" in
     y|Y ) files=$files" .zshrc";;
-esac	
+esac
 
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"

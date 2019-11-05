@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # .bashrc
 
 # Source global definitions
@@ -28,6 +29,11 @@ fi
 # Dreamhost
 if [ -f ~/.dreamhost_profile ]; then
   . ~/.dreamhost_profile
+fi
+
+# WordPress
+if [ -f ~/.wordpress_aliases ]; then
+  . ~/.wordpress_aliases
 fi
 
 [ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"
