@@ -11,6 +11,11 @@ if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
 
+# Git alias
+if [ -f ~/.git_aliases ]; then
+  . ~/.git_aliases
+fi
+
 # Docker alias
 if [ -f ~/.docker_aliases ]; then
   . ~/.docker_aliases

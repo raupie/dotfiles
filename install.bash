@@ -83,10 +83,10 @@ esac
 # git configuration
 if [[ $option -eq 1 ]];
 then
-    read -p "Install Git Aliases: {y/n}? " git
+    read -p "Install Git Preferences: {y/n}? " git
 fi
 case "$git" in
-    y|Y ) files=$files" .gitconfig .gitignore_global";;
+    y|Y ) files=$files" .gitconfig .gitignore_global .git_aliases";;
 esac
 
 # tmux configuration
