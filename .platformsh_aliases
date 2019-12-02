@@ -1,2 +1,0 @@
-# Platform.sh Aliases
-alias psh:dump='platform db:dump -f ezplatform.sql.gz -d data -z -t'
