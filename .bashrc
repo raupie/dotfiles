@@ -21,8 +21,8 @@ if [ -f ~/.docker_aliases ]; then
 fi
 
 # eZ Publish
-if [ -f ~/.ez_profile ]; then
-  . ~/.ez_profile
+if [ -f ~/.ez_aliases ]; then
+  . ~/.ez_aliases
 fi
 
 # Dreamhost
