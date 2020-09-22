@@ -1,7 +1,13 @@
 [user]
   name = Travis Raup
   email = travis.raup@gmail.com
+	signingKey = ""
 [core]
   excludesfile = ~/.gitignore_global
   editor = vim
-  autocrlf = true
+[gpg]
+	program = gpg
+[commit]
+	gpgSign = false
+[tag]
+	forceSignAnnotated = false

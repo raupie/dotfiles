@@ -21,8 +21,8 @@ if [ -f ~/.docker_aliases ]; then
 fi
 
 # eZ Publish
-if [ -f ~/.ez_profile ]; then
-  . ~/.ez_profile
+if [ -f ~/.ez_aliases ]; then
+  . ~/.ez_aliases
 fi
 
 # Platform.sh
@@ -44,10 +44,6 @@ fi
 
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
-# BEGIN SNIPPET: Platform.sh CLI configuration
-export PATH="$HOME/"'.platformsh/bin':"$PATH"
-if [ -f "$HOME/"'.platformsh/shell-config.rc' ]; then . "$HOME/"'.platformsh/shell-config.rc'; fi # END SNIPPET
- 
-# BEGIN SNIPPET: Magento Cloud CLI configuration
-export PATH="$HOME/"'.magento-cloud/bin':"$PATH"
-if [ -f "$HOME/"'.magento-cloud/shell-config.rc' ]; then . "$HOME/"'.magento-cloud/shell-config.rc'; fi # END SNIPPET
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+  source /etc/profile.d/vte.sh
+fi

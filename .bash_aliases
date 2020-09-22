@@ -18,6 +18,11 @@ alias du='du -h -c'
 alias myip='curl http://ipecho.net/plain; echo'
 alias ducks='du -csh * | sort -rn | head'
 
+## web stuff
+trip(){
+    curl -s -w "%{time_total}\n" -o /dev/null $1
+}
+
 ## get top process eating memory
 alias psmem='ps auxf | sort -nr -k 4'
 alias psmem10='ps auxf | sort -nr -k 4 | head -10'
