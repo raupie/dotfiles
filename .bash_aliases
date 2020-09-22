@@ -18,7 +18,7 @@ alias du='du -h -c'
 alias myip='curl http://ipecho.net/plain; echo'
 alias ducks='du -csh * | sort -rn | head'
 
-## web stuff
+## web
 trip(){
     curl -s -w "%{time_total}\n" -o /dev/null $1
 }

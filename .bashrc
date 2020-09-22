@@ -25,11 +25,6 @@ if [ -f ~/.ez_aliases ]; then
   . ~/.ez_aliases
 fi
 
-# Platform.sh
-if [ -f ~/.platformsh_aliases ]; then
-  . ~/.platformsh_aliases
-fi
-
 # Dreamhost
 if [ -f ~/.dreamhost_profile ]; then
   . ~/.dreamhost_profile
