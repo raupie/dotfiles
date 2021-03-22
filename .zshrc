@@ -6,7 +6,7 @@ ZSH_DISABLE_COMPFIX="true"
  
 ENABLE_CORRECTION="true"
  
-plugins=(git extract web-search)
+plugins=(git extract web-search platform)
  
 source $ZSH/oh-my-zsh.sh
  
@@ -21,6 +21,8 @@ alias zshconfig="vi ~/.zshrc"
 alias ohmyzsh="vi ~/.oh-my-zsh"
 alias vim="nocorrect vim"
 alias ssh="nocorrect ssh"
+
+alias date="/usr/local/bin/TIME.sh"
 
 # Platform CLI
 alias platform="nocorrect platform"
