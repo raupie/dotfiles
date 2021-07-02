@@ -36,3 +36,7 @@ alias pym='python3 manage.py'
 alias mkenv='python3 -m venv env'
 alias startenv='source env/bin/activate && which python3'
 alias stopenv='deactivate'
+
+## Monitor
+alias bmonitor='xrandr --output eDP-1 --off'
+alias lmonitor='xrandr --output eDP-1 --display :0.0 --auto'
