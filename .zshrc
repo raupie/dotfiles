@@ -6,7 +6,7 @@ ZSH_DISABLE_COMPFIX="true"
  
 ENABLE_CORRECTION="true"
  
-plugins=(git extract web-search platform)
+plugins=(git extract web-search)
  
 source $ZSH/oh-my-zsh.sh
  
