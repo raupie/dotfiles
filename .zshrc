@@ -46,3 +46,9 @@ if [ -f "$HOME/"'.magento-cloud/shell-config.rc' ]; then . "$HOME/"'.magento-clo
 HOME=${HOME:-'/home/raupie'}
 export PATH="$HOME/"'.symfony-cloud-cli/bin':"$PATH"
 if [ -f "$HOME/"'.symfony-cloud-cli/shell-config.rc' ]; then . "$HOME/"'.symfony-cloud-cli/shell-config.rc'; fi # END SNIPPET
+
+prompt_context() {
+  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+    prompt_segment black default "%(!.%{%F{yellow}%}.)"
+  fi
+}
